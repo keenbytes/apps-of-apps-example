@@ -1,26 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
-  name: apps-set-a
+  name: root-app-a
   namespace: argocd
 spec:
-  generators:
-    - git:
-        repoURL: https://github.com/keenbytes/apps-of-apps-example
-        revision: HEAD
-        directories:
-          - path: apps/first-level/a
-  template:
-    metadata:
-      name: '{{path.basename}}-as'
-    spec:
-      project: default
-      source:
-        repoURL: https://github.com/keenbytes/apps-of-apps-example
-        targetRevision: HEAD
-        path: '{{path}}'
-      destination:
-        server: https://kubernetes.default.svc
-        namespace: argocd
-      syncPolicy:
-        automated: {}
+  project: default
+  source:
+    repoURL: https://github.com/keenbytes/apps-of-apps-example
+    targetRevision: HEAD
+    path: apps/first-level/a
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated: {}
