@@ -9,8 +9,8 @@ spec:
         repoURL: https://github.com/keenbytes/apps-of-apps-example
         revision: HEAD
         directories:
-          - path: app/stage5-1-nginx
-          - path: app/stage5-2-nginx
+          - path: stage5-1-nginx
+          - path: stage5-2-nginx
   template:
     metadata:
       name: '{{path.basename}}'
