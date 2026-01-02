@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: a21-app
+  name: stage1-app
   namespace: tools
 spec:
-  project: a21-project
+  project: stage1
   source:
     repoURL: https://github.com/keenbytes/apps-of-apps-example
     targetRevision: HEAD
-    path: app/a21
+    path: stage1-app
   destination:
     server: https://kubernetes.default.svc
     namespace: tools

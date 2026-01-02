@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: c11-set
+  name: stage5-apps
   namespace: tools
 spec:
   generators:
@@ -9,13 +9,13 @@ spec:
         repoURL: https://github.com/keenbytes/apps-of-apps-example
         revision: HEAD
         directories:
-          - path: app/c111
-          - path: app/c112
+          - path: app/stage5-1-nginx
+          - path: app/stage5-2-nginx
   template:
     metadata:
-      name: '{{path.basename}}-app'
+      name: '{{path.basename}}'
     spec:
-      project: c111-project
+      project: stage5
       source:
         repoURL: https://github.com/keenbytes/apps-of-apps-example
         targetRevision: HEAD

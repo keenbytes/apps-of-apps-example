@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: a21-project
+  name: stage5
   namespace: tools
 spec:
   description: Description

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: c21-project
+  name: stage4a
   namespace: tools
 spec:
   description: Description
